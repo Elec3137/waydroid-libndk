@@ -1,4 +1,6 @@
 # Maintainer: Electria
+# Created with the reference of: https://github.com/casualsnek/waydroid_script
+
 pkgname=waydroid-libndk
 pkgver=1
 pkgrel=1
