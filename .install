@@ -1,0 +1,29 @@
+post_install() {
+    _props=(
+    "ro.product.cpu.abilist"
+    "ro.product.cpu.abilist32"
+    "ro.product.cpu.abilist64"
+    "ro.dalvik.vm.native.bridge"
+    "ro.enable.native.bridge.exec"
+    "ro.vendor.enable.native.bridge.exec"
+    "ro.vendor.enable.native.bridge.exec64"
+    "ro.ndk_translation.version"
+    "ro.dalvik.vm.isa.arm"
+    "ro.dalvik.vm.isa.arm64")
+
+    _values=(
+    "x86_64,x86,armeabi-v7a,armeabi,arm64-v8a"
+    "x86,armeabi-v7a,armeabi"
+    "x86_64,arm64-v8a"
+    "libndk_translation.so"
+    "1"
+    "1"
+    "1"
+    "0.2.3"
+    "x86"
+    "x86_64")
+
+    for (( i=0; i<${#_props[*]}; i++ )); do
+        waydroid prop set ${_props[$i]} ${_values[$i]}
+    done
+}
