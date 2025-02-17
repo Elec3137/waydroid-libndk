@@ -22,8 +22,11 @@ post_install() {
     "0.2.3"
     "x86"
     "x86_64")
-
-    for (( i=0; i<${#_props[*]}; i++ )); do
-        waydroid prop set persist.${_props[$i]} ${_values[$i]}
+    for _user in `ls /home/`; do
+        for (( i=0; i<${#_props[*]}; i++ )); do
+            echo -e "sudo -Eu $_user waydroid prop set persist.${_props[$i]} ${_values[$i]}"
+            sudo -Eu $_user waydroid prop set persist.${_props[$i]} ${_values[$i]}
+        done
     done
+    sudo systemctl restart waydroid-container.service
 }
