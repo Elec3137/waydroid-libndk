@@ -25,7 +25,7 @@ post_install() {
     for _user in `ls /home/`; do
         for (( i=0; i<${#_props[*]}; i++ )); do
             echo -e "sudo -Eu $_user waydroid prop set persist.${_props[$i]} ${_values[$i]}"
-            sudo -Eu $_user waydroid prop set persist.${_props[$i]} ${_values[$i]}
+            sudo -Eu $_user waydroid prop set persist.${_props[$i]} ${_values[$i]} # has an issue finding waydroid session due to enviroment variables; this doesn't help
         done
     done
     waydroid container restart
