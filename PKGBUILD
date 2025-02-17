@@ -12,7 +12,7 @@ depends=('waydroid')
 makedepends=()
 
 source=('https://github.com/supremegamers/vendor_google_proprietary_ndk_translation-prebuilt/archive/9324a8914b649b885dad6f2bfd14a67e5d1520bf.zip')
-sha256sums=('SKIP')
+md5sums=('c9572672d1045594448068079b34c350')
 
 package() {
 
