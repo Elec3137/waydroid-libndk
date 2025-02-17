@@ -16,7 +16,7 @@ md5sums=('c9572672d1045594448068079b34c350')
 
 install='.install'
 package() {
-    cd $srcdir/prebuilts
+    cd $srcdir/vendor_google_proprietary_ndk_translation-prebuilt-9324a8914b649b885dad6f2bfd14a67e5d1520bf/prebuilts
 
     install -d ${pkgdir}/var/lib/waydroid/overlay/system/bin/
     cp bin/arm ${pkgdir}/var/lib/waydroid/overlay/system/bin/
