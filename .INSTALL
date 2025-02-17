@@ -1,4 +1,5 @@
 post_install() {
+    waydroid session start &
     _props=(
     "ro.product.cpu.abilist"
     "ro.product.cpu.abilist32"
@@ -24,6 +25,6 @@ post_install() {
     "x86_64")
 
     for (( i=0; i<${#_props[*]}; i++ )); do
-        waydroid prop set ${_props[$i]} ${_values[$i]}
+        waydroid prop set persist.${_props[$i]} ${_values[$i]}
     done
 }
