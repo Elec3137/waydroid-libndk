@@ -1,5 +1,4 @@
 post_install() {
-    waydroid session start &
     _props=(
     "ro.product.cpu.abilist"
     "ro.product.cpu.abilist32"
