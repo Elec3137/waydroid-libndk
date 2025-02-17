@@ -28,5 +28,5 @@ post_install() {
             sudo -Eu $_user waydroid prop set persist.${_props[$i]} ${_values[$i]}
         done
     done
-    sudo systemctl restart waydroid-container.service
+    waydroid container restart
 }
